@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse IA - Morocco Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Morocco Explorer</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="monument.html">Monuments</a>
+            <a href="analyse.html">Analyse IA</a>
+        </nav>
+    </header>
+
+    <main class="analyse-page">
+        <h2>Analysez une photo avec l'intelligence artificielle</h2>
+        <p>Sélectionnez une image d'un lieu ou d'un monument marocain.</p>
+
+        <input type="file" id="imageInput" accept="image/*">
+
+        <div>
+            <img id="imagePreview" alt="Aperçu de votre image"
+                 style="display:none; max-width:300px; margin-top:20px;">
+        </div>
+
+        <button id="analyzeButton" type="button">
+            Analyser l'image
+        </button>
+
+        <p id="result">
+            Le résultat de l'analyse apparaîtra ici.
+        </p>
+    </main>
+
+    <footer>
+        <p>© 2026 Morocco Explorer</p>
+    </footer>
+
+    <script src="js/analyse.js"></script>
+</body>
+</html>

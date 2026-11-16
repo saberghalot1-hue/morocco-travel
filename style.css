@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f5ef;
+    color: #333;
+}
+
+header {
+    background-color: #176b45;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hero {
+    min-height: 500px;
+    background: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+    ), url("../images/maroc.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #d99b35;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #176b45;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.destinations {
+    padding: 50px 8%;
+    text-align: center;
+}
+
+.destinations h2 {
+    color: #176b45;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.city-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.city-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    padding-bottom: 20px;
+}
+
+.city-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.city-card h3 {
+    color: #176b45;
+    margin: 15px;
+}
+
+.city-card p {
+    padding: 0 15px;
+    line-height: 1.6;
+}
+
+@media (max-width: 750px) {
+    .city-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .city-container {
+        grid-template-columns: 1fr;
+    }
+}
+.monuments {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 30px 0;
+}
+
+.monument-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+}
+
+.monument-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.monument-card h3,
+.monument-card p {
+    margin: 12px;
+}
