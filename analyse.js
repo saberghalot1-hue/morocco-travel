@@ -59,3 +59,34 @@ analyzeButton.addEventListener("click", async function () {
     result.textContent = "Erreur lors de l'analyse : " + err.message;
   }
 });
+
+const translateInput = document.getElementById("translateInput");
+const targetLang = document.getElementById("targetLang");
+const translateButton = document.getElementById("translateButton");
+const translateResult = document.getElementById("translateResult");
+
+if (translateButton) {
+  translateButton.addEventListener("click", async function () {
+    const text = (translateInput.value || "").trim();
+    const to = targetLang.value || "fr";
+    if (!text) {
+      translateResult.textContent = "Veuillez entrer un texte à traduire.";
+      return;
+    }
+
+    translateResult.textContent = "Traduction en cours...";
+    try {
+      const res = await fetch("/api/translate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, to }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || JSON.stringify(data));
+      const translated = data?.[0]?.translations?.[0]?.text || "";
+      translateResult.textContent = translated ? `Résultat : ${translated}` : "Aucune traduction reçue.";
+    } catch (err) {
+      translateResult.textContent = "Erreur de traduction : " + err.message;
+    }
+  });
+}
