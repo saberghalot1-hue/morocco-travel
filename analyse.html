@@ -19,23 +19,47 @@
     </header>
 
     <main class="analyse-page">
-        <h2>Analysez une photo avec l'intelligence artificielle</h2>
-        <p>Sélectionnez une image d'un lieu ou d'un monument marocain.</p>
+        <section>
+            <h2>Analysez une photo avec l'intelligence artificielle</h2>
+            <p>Sélectionnez une image d'un lieu ou d'un monument marocain.</p>
 
-        <input type="file" id="imageInput" accept="image/*">
+            <input type="file" id="imageInput" accept="image/*">
 
-        <div>
-            <img id="imagePreview" alt="Aperçu de votre image"
-                 style="display:none; max-width:300px; margin-top:20px;">
-        </div>
+            <div>
+                <img id="imagePreview" alt="Aperçu de votre image"
+                     style="display:none; max-width:300px; margin-top:20px;">
+            </div>
 
-        <button id="analyzeButton" type="button">
-            Analyser l'image
-        </button>
+            <button id="analyzeButton" type="button">
+                Analyser l'image
+            </button>
 
-        <p id="result">
-            Le résultat de l'analyse apparaîtra ici.
-        </p>
+            <p id="result">
+                Le résultat de l'analyse apparaîtra ici.
+            </p>
+        </section>
+
+        <hr style="margin:30px 0;">
+
+        <section>
+            <h2>Service de traduction (Azure AI Translator)</h2>
+            <p>Traduisez un texte lié à votre voyage au Maroc.</p>
+
+            <textarea id="translateInput" rows="4" style="width:100%;max-width:700px;padding:10px;" placeholder="Entrez le texte à traduire..."></textarea>
+
+            <div style="margin:12px 0;">
+                <label for="targetLang">Traduire vers :</label>
+                <select id="targetLang">
+                    <option value="fr">Français</option>
+                    <option value="en">Anglais</option>
+                    <option value="ar">Arabe</option>
+                    <option value="es">Espagnol</option>
+                </select>
+                <button id="translateButton" type="button">Traduire</button>
+            </div>
+
+            <p id="translateResult">La traduction apparaîtra ici.</p>
+        </section>
     </main>
 
     <footer>
